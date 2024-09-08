@@ -1,3 +1,4 @@
+import 'package:dashboard_ui/constants/constants.dart';
 import 'package:dashboard_ui/data/side_menu_data.dart';
 import 'package:flutter/material.dart';
 
@@ -9,6 +10,8 @@ class SideMenuWidget extends StatefulWidget {
 }
 
 class _SideMenuWidgetState extends State<SideMenuWidget> {
+  int selectedIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     final data = SideMenuData();
@@ -22,21 +25,40 @@ class _SideMenuWidgetState extends State<SideMenuWidget> {
   }
   
   Widget buildMenuEntry(SideMenuData data, int index) {
-    return Row(
-      children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 13,vertical: 7),
-          child: Icon(data.menu[index].icon,color: Colors.grey,),
+    final isSelected = selectedIndex == index;
+
+    return Container(
+      margin: EdgeInsets.symmetric(vertical: 5),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(6),
+        color: isSelected ? selectionColor : Colors.transparent
+      ),
+      child: InkWell(
+        onTap: (){
+          setState(() {
+            selectedIndex = index;
+          });
+        },
+        child: Row(
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 13,vertical: 7),
+              child: Icon(
+                data.menu[index].icon,
+                color: isSelected ? Colors.black : Colors.grey,
+              ),
+            ),
+            Text(
+              data.menu[index].title,
+              style: TextStyle(
+                fontSize: 16,
+                color: isSelected ? Colors.black : Colors.grey,
+                fontWeight: isSelected ? FontWeight.w600 : FontWeight.normal
+              ),
+            ),
+          ],
         ),
-        Text(
-          data.menu[index].title,
-          style: TextStyle(
-            fontSize: 16,
-            color: Colors.grey,
-            fontWeight: FontWeight.normal
-          ),
-        ),
-      ],
+      ),
     );
   }
 }

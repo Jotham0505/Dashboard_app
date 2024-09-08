@@ -1,3 +1,4 @@
+import 'package:dashboard_ui/widgets/dashboard_widget.dart';
 import 'package:dashboard_ui/widgets/side_menu_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -19,7 +20,7 @@ class MainScreen extends StatelessWidget {
             ),
             Expanded(
               flex: 7,
-              child: Container(color: Colors.blue,),
+              child: DashboardWidget(),
             ),
             Expanded(
               flex: 3,
