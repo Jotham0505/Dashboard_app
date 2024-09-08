@@ -1,4 +1,5 @@
 import 'package:dashboard_ui/constants/constants.dart';
+import 'package:dashboard_ui/screens/mainScreen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,9 +16,10 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        scaffoldBackgroundColor: backgroundColor
+        scaffoldBackgroundColor: backgroundColor,
+        brightness: Brightness.dark
       ),
-      //home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MainScreen(),
     );
   }
 }
