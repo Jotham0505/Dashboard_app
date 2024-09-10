@@ -10,9 +10,9 @@ class DashboardWidget extends StatelessWidget {
     return const Column(
       children: [
         SizedBox(height: 18,),
-        HeaderWidget(),
+        HeaderWidget(), // header widget 
         SizedBox(height: 0,),
-        ActivityDetailsWidget()
+        ActivityDetailsWidget() // activity details widget 
       ],
     );
   }
