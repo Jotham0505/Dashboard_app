@@ -19,7 +19,7 @@ class ActivityDetailsWidget extends StatelessWidget {
         crossAxisSpacing: 15,
         mainAxisSpacing: 12
       ),
-      itemBuilder: (BuildContext context, int index) => CustomCard(
+      itemBuilder: (BuildContext context, int index) => CustomCard( // custom card
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
