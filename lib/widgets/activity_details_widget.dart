@@ -13,13 +13,10 @@ class ActivityDetailsWidget extends StatelessWidget {
       itemCount: healthDetails.healthData.length,
       shrinkWrap: true,
       physics: ScrollPhysics(),
-      gridDelegate:
-          SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 4,
-        crossAxisSpacing: 15,
-        mainAxisSpacing: 12
-      ),
-      itemBuilder: (BuildContext context, int index) => CustomCard( // custom card
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 4, crossAxisSpacing: 15, mainAxisSpacing: 12),
+      itemBuilder: (BuildContext context, int index) => CustomCard(
+        // custom card
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -29,6 +26,25 @@ class ActivityDetailsWidget extends StatelessWidget {
               width: 30,
               height: 30,
             ),
+            Padding(
+              padding: EdgeInsets.only(top: 15, bottom: 4),
+              child: Text(
+                healthDetails.healthData[index].value,
+                style: TextStyle(
+                  fontSize: 18,
+                  color: Colors.white,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ),
+            Text(
+              healthDetails.healthData[index].title,
+              style: TextStyle(
+                fontSize: 13,
+                color: Colors.grey,
+                fontWeight: FontWeight.normal,
+              ),
+            )
           ],
         ),
       ),
