@@ -24,7 +24,9 @@ class MainScreen extends StatelessWidget {
             ),
             Expanded(
               flex: 3,
-              child: Container(color: Colors.green,),
+              child: Container(
+                color: Colors.green,
+              ),
             ),
           ],
         ),

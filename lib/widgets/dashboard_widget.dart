@@ -7,13 +7,20 @@ class DashboardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        SizedBox(height: 18,),
+        SizedBox(
+          height: 18,
+        ),
         HeaderWidget(), // header
-        SizedBox(height: 18,),
+        SizedBox(
+          height: 18,
+        ),
         ActivityDetailsWidget(), // activity details widget
-        SizedBox(height: 18,), 
+        SizedBox(
+          height: 18,
+        ),
       ],
     );
   }

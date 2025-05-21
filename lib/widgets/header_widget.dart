@@ -6,9 +6,8 @@ class HeaderWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: TextField(
-        decoration: InputDecoration(
+    return TextField(
+      decoration: InputDecoration(
           filled: true,
           fillColor: cardBackgroundColor,
           enabledBorder: OutlineInputBorder(
@@ -21,17 +20,13 @@ class HeaderWidget extends StatelessWidget {
             borderRadius: BorderRadius.circular(12),
             borderSide: BorderSide(color: Theme.of(context).primaryColor),
           ),
-          contentPadding: EdgeInsets.symmetric(
-            vertical: 5
-          ),
+          contentPadding: EdgeInsets.symmetric(vertical: 5),
           hintText: 'Search',
           prefixIcon: Icon(
             Icons.search,
             color: Colors.grey,
             size: 21,
-          )
-        ),
-      ),
+          )),
     );
   }
 }
